@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Include Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <title>Tiwari Agro Products</title>
+    <style>
+        /* CSS for Navbar */
+        .navbar {
+            overflow: hidden;
+            background-color: #acffa6;
+            position: fixed; /* Make navbar fixed */
+            top: 0; /* Align to the top */
+            width: 100%; /* Occupy full width */
+            z-index: 999; /* Ensure navbar appears on top */
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: rgb(0, 0, 0);
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+
+        .navbar a:hover {
+            background-color: #0a5c15;
+            color: black;
+        }
+
+        .navbar .logo {
+            float: left;
+            padding: 10px 15px;
+        }
+
+        .navbar .right-links {
+            float: right;
+        }
+
+        /* CSS for Page Content */
+        .content {
+            padding-top: 80px; /* Adjust according to navbar height */
+            margin-bottom: 00px; /* Ensure content doesn't overlap with footer */
+            background-color: #f5f5f5; /* Add background color */
+            border-top: 2px solid #0a5c15; /* Add top border */
+            border-bottom: 2px solid #0a5c15; /* Add bottom border */
+            }
+
+        /* CSS for Background Image with Logo and Company Name */
+        .background-section {
+            background-image: url('img/company-logo.png'); /* Replace with your background image */
+            background-size: cover;
+            height: 600px; /* Adjust as needed */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .company-info {
+            background-color: rgba(255, 255, 255, 0.8); /* Background color with transparency */
+            padding: 20px;
+            border-radius: 10px;
+            animation: fadeInUp 3s ease;
+        }
+
+        .company-info h1 {
+            margin: 0;
+            font-family: Tahoma;
+            font-size: 5em;
+        }
+
+        /* CSS for Product Categories */
+        .category {
+            margin: 20px;
+            padding: 20px;
+            display: inline-table;
+            border: 2px solid #0a5c15; /* Border color */
+            border-radius: 10px; /* Rounded corners */
+            transition: all 0.3s ease; /* Smooth transition */
+        }
+
+        .category:hover {
+            background-color: #0a5c15; /* Background color on hover */
+        }
+
+        .category img {
+            max-width: 100%;
+            display: block; /* Ensure images don't overflow */
+            margin-bottom: 10px; /* Space between image and text */
+        }
+
+        .category h3 {
+            margin: 0;
+            font-size: 1.8em; /* Adjusted font size */
+            text-align: center;
+            color: #ffffff; /* Text color */
+        }
+
+        .category a {
+            color: #ffffff; /* Link color */
+            text-decoration: none;
+        }
+
+        .category a:hover {
+            text-decoration: underline;
+        }
+        
+        .category-container {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            
+        }
+
+        .centered-category {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+
+        /* CSS for About Us Section */
+        .about-us {
+            padding: 20px;
+            background-color: #d4ffd4;
+            border-radius: 10px;
+            margin-top: 20px;
+            animation: fadeInUp 1s ease;
+            border: 2px solid #9fff98; /* Border color */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Box shadow */
+        }
+
+        .about-us h2 {
+            margin-top: 15;
+            color: #0a5c15; /* Text color */
+        }
+
+        .mission-vision-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .mission-vision-item {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .mission-vision-item img {
+            max-width: 100%;
+        }
+
+        .contact-section {
+            padding: 20px;
+            background-color: #ffffff; /* White background */
+            border-radius: 10px;
+            margin-top: 20px;
+            animation: fadeInUp 1s ease;
+            border: 2px solid #0a5c15; /* Border color */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Box shadow */
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-form label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .contact-form input[type="text"],
+        .contact-form input[type="email"],
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .contact-form input[type="submit"] {
+            background-color: #0a5c15;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .contact-form input[type="submit"]:hover {
+            background-color: #084b11;
+        }
+
+        /* CSS for Footer */
+        .footer {
+            background-color: #acffa6;
+            color: rgb(4, 4, 4);
+            text-align: center;
+            padding: 25px 20px; /* Increased padding */
+            bottom: 0;
+            width: 100%;
+            animation: fadeInUp 1s ease;
+            margin-top: 50px; /* Increased gap between category and footer */
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center; /* Center vertically */
+            flex-wrap: wrap;
+        }
+
+        .left-section, .right-section {
+            flex: 1;
+            text-align: left;
+        }
+
+        .line {
+            border-left: 1px solid #000000;
+            height: 200px; /* Adjust height as needed */
+            margin: 0 20px; /* Adjust margin as needed */
+        }
+
+        .social-media {
+            list-style-type: none;
+            padding: 0;
+            margin: 0; /* Remove default margin */
+        }
+
+        .social-media li {
+            margin-bottom: 10px; /* Adjust margin as needed */
+        }
+
+        .social-link {
+            color: rgb(0, 0, 0);
+            text-decoration: none;
+        }
+
+        .social-link:hover {
+            text-decoration: underline;
+        }
+
+        .hidden {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s ease forwards;
+        }
+
+        /* Keyframe animations */
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .whatsapp-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            padding: 10px;
+            font-size: 20px;
+            cursor: pointer;
+            z-index: 1000;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+    </style>
+</head>
+<body>
+
+    <button class="whatsapp-button" onclick="openWhatsApp()"> <!-- Add onclick event to open WhatsApp -->
+        <i class="fab fa-whatsapp"></i> <!-- WhatsApp logo -->
+    </button>
+
+<!-- Navbar -->
+<div class="navbar">
+    <div class="logo">
+        <img src="img/company-logo.png" alt="Company Logo" width="50">
+    </div>
+    <a href="#home"><b>Tiwari Agro Products</b></a>
+    <div class="right-links">
+        <a href="#products">Our Products</a>
+        <a href="#Aboutus">About Us</a>
+    </div>
+</div>
+
+<!-- Background Image with Logo and Company Name -->
+<div class="background-section">
+    <div class="company-info">
+        <h1>Tiwari Agro Products</h1>
+    </div>
+</div>
+
+<!-- About Us Section -->
+<div class="about-us">
+    <h2 style="text-align: center; color: #0a5c15;">About Us</h2>
+    <div class="mission-vision-container">
+        <div class="mission-vision-item">
+            <img src="img/mission.jpeg" alt="Mission Image">
+            <h3>Our Mission</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+        <div class="line"></div> <!-- Vertical line -->
+        <div class="mission-vision-item">
+            <img src="img/vision.jpeg" alt="Vision Image">
+            <h3>Our Vision</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Product Categories -->
+<div class="content">
+    <h2 style="text-align: center;">Our Products</h2>
+    <div class="category-container">
+        <div class="category">
+            <a href="spices.html"> <!-- Link for Category 1 -->
+                <img src="img/Category1.jpeg" alt="Category 1">
+                <h3>Spices</h3>
+            </a>
+        </div>
+        <div class="category">
+            <a href="oil.html"> <!-- Link for Category 2 -->
+                <img src="img/Category2.jpeg" alt="Category 2">
+                <h3>Oil</h3>
+            </a>
+        </div>
+        <div class="category">
+            <a href="Dals.html"> <!-- Link for Category 3 -->
+                <img src="img/Category3.jpeg" alt="Category 3">
+                <h3>Dal's</h3>
+            </a>
+        </div>
+    </div>
+    <div class="category-container">
+        <div class="centered-category">
+            <div class="category">
+                <a href="flour.html"> <!-- Link for Category 4 -->
+                    <img src="img/Category4.jpeg" alt="Category 4">
+                    <h3>Flour</h3>
+                </a>
+            </div>
+            <div class="category">
+                <a href="fruits.html"> <!-- Link for Category 5 -->
+                    <img src="img/Category5.jpeg" alt="Category 5">
+                    <h3>Fruits</h3>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Contact Us Section -->
+<div class="contact-section content">
+    <h2 style="text-align: center;">Contact Us</h2>
+    <div class="contact-form">
+        <form action="mailto:info@tiwariagro.com" method="post" enctype="text/plain">
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" required><br>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br>
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" rows="4" required></textarea><br>
+            <input type="submit" value="Send">
+        </form>
+    </div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+    <div class="footer-content">
+        <div class="left-section">
+            <h4>Follow Us</h4>
+            <ul class="social-media">
+                <li><a href="#" class="social-link"><i class="fab fa-facebook"></i> Facebook</a></li>
+                <li><a href="#" class="social-link"><i class="fab fa-twitter"></i> Twitter</a></li>
+                <li><a href="#" class="social-link"><i class="fab fa-instagram"></i> Instagram</a></li>
+            </ul>
+        </div>
+        <div class="line"></div> <!-- Vertical line -->
+        <div class="right-section">
+            <div class="contact-info">
+                <h4>Contact Us</h4>
+                <ul>
+                    <li>Email: info@tiwariagro.com</li>
+                    <li>Phone: +1234567890</li>
+                </ul>
+            </div>
+            <div class="address">
+                <h4>Address</h4>
+                <p>123 Street Name, City, Country</p>
+            </div>
+        </div>
+    </div>
+    <p>&copy; 2024 Tiwari Agro Products. All rights reserved.</p>
+</div>
+
+
+<script>
+    // Function to add hidden class to elements initially
+    window.onload = function() {
+        var elementsToShow = document.querySelectorAll('.hidden');
+        Array.prototype.forEach.call(elementsToShow, function(element){
+            element.classList.remove('hidden');
+        });
+    };
+
+    // Smooth scroll to the Product Categories section when clicking on "Our Products" in the navbar
+    document.addEventListener('DOMContentLoaded', function() {
+        var ourProductsLink = document.querySelector('.navbar a[href="#products"]');
+        ourProductsLink.addEventListener('click', function(event) {
+            event.preventDefault();
+            var categoriesSection = document.querySelector('.content');
+            categoriesSection.scrollIntoView({ behavior: 'smooth' });
+        });
+
+        // Smooth scroll to the About Us section when clicking on "About Us" in the navbar
+        var aboutUsLink = document.querySelector('.navbar a[href="#Aboutus"]');
+        aboutUsLink.addEventListener('click', function(event) {
+            event.preventDefault();
+            var aboutUsSection = document.querySelector('.about-us');
+            aboutUsSection.scrollIntoView({ behavior: 'smooth' });
+        });
+    });
+
+    // Function to open WhatsApp chat
+    function openWhatsApp() {
+        var confirmed = confirm("Are you sure you want to message Tiwari Agro Products on WhatsApp?");
+        if (confirmed) {
+            var message = "Hello Tiwari Agro Products!"; // You can customize the initial message here
+            var phoneNumber = "+917620488075"; // Replace with your WhatsApp business number
+            var whatsappUrl = "https://api.whatsapp.com/send?phone=" + phoneNumber + "&text=" + encodeURIComponent(message);
+            window.open(whatsappUrl, '_blank');
+        }
+    }
+
+</script>
+
+</body>
+</html>
